@@ -5,12 +5,12 @@ $LOAD_PATH.unshift(proto_dir)
 
 require 'google/protobuf'
 
-# require 'proto/query'
-require 'proto2/query_pb'
-# require 'proto/vtgate'
-require 'proto2/vtgate_pb'
-# require 'proto/vtgateservice'
-require 'proto2/vtgateservice_pb'
+require 'proto/query'
+# require 'proto2/query_pb'
+require 'proto/vtgate'
+# require 'proto2/vtgate_pb'
+require 'proto/vtgateservice'
+# require 'proto2/vtgateservice_pb'
 
 # load Vtctl
 require 'vtctl/client'
