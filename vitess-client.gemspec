@@ -34,5 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "pry-byebug"
   spec.add_dependency 'activerecord', "~> 4.1"
   spec.add_dependency "grpc"
-  spec.add_dependency 'mysql2'
+  spec.add_dependency 'mysql2', '~> 0.4.6'
 end
