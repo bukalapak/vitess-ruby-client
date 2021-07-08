@@ -4,7 +4,7 @@ module Vitess
   class KeyspaceTranslator
     attr_reader :strategy
 
-    def initialize(sharding_type: sharding_type)
+    def initialize(sharding_type: nil)
       case sharding_type
         when :consistent_hashing
           @strategy = ConsistentHash.new

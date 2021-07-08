@@ -6,8 +6,11 @@ $LOAD_PATH.unshift(proto_dir)
 require 'google/protobuf'
 
 require 'proto/query'
+# require 'proto2/query_pb'
 require 'proto/vtgate'
+# require 'proto2/vtgate_pb'
 require 'proto/vtgateservice'
+# require 'proto2/vtgateservice_pb'
 
 # load Vtctl
 require 'vtctl/client'
@@ -103,7 +106,7 @@ module Vitess
 
     def query(sql, tablet_type: 1)
       r = Result.new command {
-        vtgate_service.execute(Vtgate::ExecuteRequest.new({ caller_id: caller_id(:query), session: @session, query: bound_query(sql), tablet_type: tablet_type}))
+        vtgate_service.execute(Vtgate::ExecuteRequest.new({ caller_id: caller_id(:query), session: @session, query: bound_query(sql), tablet_type: tablet_type, not_in_transaction: true}))
       }
       @last_id = r.last_id
       r
